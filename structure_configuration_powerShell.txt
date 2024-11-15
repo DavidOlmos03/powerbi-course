@@ -1,0 +1,27 @@
+# Lista de carpetas principales a crear
+$folders = @(
+    "data\raw\excel", "data\raw\csv", "data\raw\json", "data\raw\otros",
+    "data\processed\excel", "data\processed\csv", "data\processed\otros",
+    "data\external", "data\power-query", "data\backups",
+    "reports\power-bi", "reports\excel", "reports\dashboards", "reports\pdf", "reports\presentaciones",
+    "scripts\python", "scripts\r", "scripts\sql", "scripts\vba", "scripts\power-query",
+    "documentation\manuales", "documentation\referencias", "documentation\actas",
+    "visualizations\charts", "visualizations\images", "visualizations\infografias",
+    "models\machine-learning", "models\forecasting", "models\estadisticos",
+    "config\credenciales",
+    "outputs\tables", "outputs\resultados", "outputs\logs",
+    "notebooks"
+)
+
+# Crear carpetas
+foreach ($folder in $folders) {
+    mkdir $folder -Force
+}
+
+# Crear archivos iniciales
+Set-Content -Path "README.md" -Value "# Proyecto de Análisis de Datos"
+Set-Content -Path "config\settings.json" -Value "{ `n  'config': 'Configuraciones generales del proyecto' `n }"
+Set-Content -Path "documentation\requerimientos.txt" -Value "# Dependencias del proyecto"
+Set-Content -Path "config\conexion_db.py" -Value "# Script de conexión a la base de datos en Python"
+
+Write-Host "Estructura de carpetas creada con éxito."

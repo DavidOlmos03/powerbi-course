@@ -1,0 +1,1 @@
+# Script de conexión a la base de datos en Python
